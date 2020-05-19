@@ -1,2 +1,2 @@
-# Notemaker
- note making app
+# proj1
+ simplenotenodeapp
