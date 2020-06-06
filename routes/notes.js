@@ -60,7 +60,6 @@ router.get('/Notebook/:notebookId/notes',auth, (req, res, next) => {
             '_id': { $in: result.note}
         }, function(err, result){
             if(!err){
-                console.log(result);
                 res.send(result);
             }
         })

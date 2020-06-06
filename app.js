@@ -12,12 +12,14 @@ const csrf = require('csurf');
 
 
 
+
+
 // routes path
 const notebook = require('./routes/notebook');
 const notes = require('./routes/notes');
-const home = require('./routes/home');
+const home = require('./routes/Home');
 const login = require('./routes/login');
-const signup = require('./routes/signup');
+const signup = require('./routes/SignUp');
 const homepage = require('./routes/homepage');
 const reset = require('./routes/reset');
 
@@ -54,6 +56,7 @@ app.use(csrfProtection);
 mongoose.connect(url, {
   useUnifiedTopology: true
 });
+
 const db = mongoose.connection;
 const collection = db.collection('notes');
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -70,6 +73,6 @@ app.use(notes);
 app.use(homepage);
 app.use(reset);
 
-app.listen(3000, 'localhost', () => {
+app.listen(5000, 'localhost', () => {
   console.log('server connected');
 });
